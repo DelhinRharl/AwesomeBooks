@@ -6,46 +6,32 @@ const bookList = document.getElementById("book-list");
 window.onload = function () {
   btn.addEventListener("click", function () {
     const contain = document.getElementById("dynamic");
+    const icontainer = document.createElement("div");
     const newLine = document.createElement("p");
     const nextLine = document.createElement("p");
     const button = document.createElement("button");
 
+    button.setAttribute("id", "remove");
+
     newLine.innerHTML = bookTitle.value;
     nextLine.innerHTML = author.value;
 
-    contain.appendChild(newLine);
-    contain.appendChild(nextLine);
-    contain.appendChild(button);
+    contain.appendChild(icontainer);
+    icontainer.appendChild(newLine);
+    icontainer.appendChild(nextLine);
+    icontainer.appendChild(button);
 
     newLine.innerHTML = bookTitle.value;
     nextLine.innerHTML = author.value;
 
     bookTitle.value = "";
     author.value = "";
+
+    const removebtn = document.getElementById("remove");
+    removebtn.addEventListener("click", function () {
+      newLine.innerHTML = null;
+      nextLine.innerHTML = null;
+      button.innerHTML = null;
+    });
   });
 };
-
-const books = {
-  Title: bookTitle,
-  Author: author,
-};
-
-bookTitle.addEventListener("input", (e) => {
-  e.preventDefault();
-
-  books.Title = bookTitle.value;
-
-  localStorage.setItem("books", JSON.stringify(books));
-});
-
-author.addEventListener("input", (e) => {
-  e.preventDefault();
-
-  books.Author = author.value;
-
-  localStorage.setItem("books", JSON.stringify(books));
-});
-
-// add books to new page
-
-//remove books
