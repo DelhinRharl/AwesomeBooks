@@ -10,8 +10,14 @@ window.onload = function () {
     const newLine = document.createElement("p");
     const nextLine = document.createElement("p");
     const button = document.createElement("button");
+    const line = document.createElement("div");
 
-    button.setAttribute("id", "remove");
+    button.setAttribute("class", "remove");
+    button.textContent="Remove";
+
+    line.setAttribute("style", "width:50%; height:2px; background-color: black; margin:15px 0;")
+
+    icontainer.setAttribute("class", "book");
 
     newLine.innerHTML = bookTitle.value;
     nextLine.innerHTML = author.value;
@@ -20,18 +26,22 @@ window.onload = function () {
     icontainer.appendChild(newLine);
     icontainer.appendChild(nextLine);
     icontainer.appendChild(button);
+    icontainer.appendChild(line);
 
-    newLine.innerHTML = bookTitle.value;
-    nextLine.innerHTML = author.value;
+   
 
-    bookTitle.value = "";
-    author.value = "";
+    /*bookTitle.value = "";
+    author.value = "";*/
 
-    const removebtn = document.getElementById("remove");
-    removebtn.addEventListener("click", function () {
-      newLine.innerHTML = null;
-      nextLine.innerHTML = null;
-      button.innerHTML = null;
-    });
+    const ic= document.getElementsByClassName("book");
+
+    removebtn = document.getElementsByClassName("remove");
+    for (let i = 0; i <= removebtn.length; i++) {
+      removebtn[i].addEventListener("click", function () {
+			  
+        ic[i].remove();
+
+        });
+    }
   });
 };
