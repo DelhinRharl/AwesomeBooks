@@ -1,0 +1,31 @@
+{
+  "name": "awesomebooks",
+  "version": "1.0.0",
+  "description": "This is the first pair programming project for the first week. Its a book library made with javascript only and with basic functionality of adding and removing books and also storing books.\r ![screenshot](./awesome.png)",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DelhinRharl/AwesomeBooks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DelhinRharl/AwesomeBooks/issues"
+  },
+  "homepage": "https://github.com/DelhinRharl/AwesomeBooks#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.3",
+    "hint": "^6.1.9",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}
