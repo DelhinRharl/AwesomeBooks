@@ -1,4 +1,3 @@
-/* eslint-disable */
 let Title;
 let Author;
 let bookList = [];
