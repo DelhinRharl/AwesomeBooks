@@ -2,14 +2,14 @@ let Title;
 let Author;
 let bookList = [];
 
-getValues = () => {
+const getValues = () => {
   Title = document.querySelector('#title').value;
   Author = document.querySelector('#author').value;
   document.querySelector('#title').value = '';
   document.querySelector('#author').value = '';
 };
 
-addBook = () => {
+const addBook = () => {
   document.getElementById('dynamic').innerHTML = '';
   bookList.forEach((book, index) => {
     document.getElementById('dynamic').innerHTML += `
@@ -27,25 +27,27 @@ if (localStorage.getItem('Books')) {
   addBook();
 }
 
- storeBook = () => {
- 
+const storeBook = () => {
   getValues();
-  let data = {
-    title:  Title,
-    author: Author
-  }
+  const data = {
+    title: Title,
+    author: Author,
+  };
   bookList.push(data);
   Title = '';
   Author = '';
   localStorage.setItem('Books', JSON.stringify(bookList));
   addBook();
-}
+};
 
-let btnAdd= document.getElementById("btn");
+const btnAdd = document.getElementById('btn');
 
 btnAdd.addEventListener('click', storeBook);
-removeItem = (index) => {
+
+const removeItem = (index) => {
   bookList.splice(index, 1);
   localStorage.setItem('Books', JSON.stringify(bookList));
   addBook();
 };
+
+removeItem();
