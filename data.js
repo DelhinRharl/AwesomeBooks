@@ -1,6 +1,36 @@
+class Book {
+  constructor(Title, Author) {
+    this.Title = Title;
+    this.Author = Author;
+  }
+}
+
+class BookL {
+  bookList = [];
+  add() {
+    Title = document.querySelector('#title').value;
+    Author = document.querySelector('#author').value;
+    if (Title !=='' && Author !=='') {
+      let book = new Book(Title,Author);
+      this.bookList.push(book);
+      console.log(this.bookList);
+      document.getElementById('dynamic').innerHTML = '';
+      this.bookList.forEach((book, index) => {
+        document.getElementById('dynamic').innerHTML += `
+        <div class="books">
+          <p class="title">${book.Title}</p>
+          <p class="authir">${book.Author}</p>
+          <button class="remove" onClick = 'removeItem(${index})'>Remove</button>
+          <hr>
+        </div>`;
+      });
+    }
+  }
+}
+
 let Title;
 let Author;
-let bookList = [];
+
 
 const getValues = () => {
   Title = document.querySelector('#title').value;
@@ -42,9 +72,12 @@ const storeBook = () => {
   addBook();
 };
 
-const btnAdd = document.getElementById('btn');
 
-btnAdd.addEventListener('click', storeBook);
+let bookl = new BookL();
+document.getElementById('btn').addEventListener('click', function(){
+bookl.add();
+})
+//btnAdd.addEventListener('click', storeBook);
 
 const removeItem = (index) => {
   bookList.splice(index, 1);
