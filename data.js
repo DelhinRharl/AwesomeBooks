@@ -17,7 +17,7 @@ const addBook = () => {
       <p class="title">${book.title}</p>
       <p class="authir">${book.author}</p>
       <button class="remove" onClick = 'removeItem(${index})'>Remove</button>
-      <hr> 
+      <hr>
     </div>`;
   });
 };
@@ -33,7 +33,9 @@ const storeBook = () => {
     title: Title,
     author: Author,
   };
-  bookList.push(data);
+  if (data.title !='' && data.author !='') {
+    bookList.push(data);
+  }
   Title = '';
   Author = '';
   localStorage.setItem('Books', JSON.stringify(bookList));
