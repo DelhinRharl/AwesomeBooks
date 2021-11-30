@@ -1,47 +1,49 @@
-const bookTitle = document.getElementById("title");
-const btn = document.getElementById("submitbtn");
-const author = document.getElementById("author");
-const bookList = document.getElementById("book-list");
 
-window.onload = function () {
-  btn.addEventListener("click", function () {
-    const contain = document.getElementById("dynamic");
-    const icontainer = document.createElement("div");
-    const newLine = document.createElement("p");
-    const nextLine = document.createElement("p");
-    const button = document.createElement("button");
-    const line = document.createElement("div");
+let Title, Author; 
+let bookList = [];
 
-    button.setAttribute("class", "remove");
-    button.textContent="Remove";
+function getValues() {
+  Title = document.querySelector('#title').value;
+  Author = document.querySelector('#author').value;
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+}
 
-    line.setAttribute("style", "width:50%; height:2px; background-color: black; margin:15px 0;")
+function addBook() {
+  document.getElementById('dynamic').innerHTML = '';
+  bookList.forEach((book, index) => {
+    document.getElementById('dynamic').innerHTML += `
+    <div class="books">
+      <p class="title">${book.title}</p>
+      <p class="authir">${book.author}</p>
+      <button class="remove" onClick = 'removeItem(${index})'>Remove</button>
+      <hr> 
+    </div>`
+  })
+}
+if(localStorage.getItem('Books')) {
+  bookList = JSON.parse(localStorage.getItem('Books'));
+  addBook();
+}
 
-    icontainer.setAttribute("class", "book");
+function storeBook () {
+  getValues();
+  let data = {
+    title:  Title,
+    author: Author
+  }
+  bookList.push(data);
+  Title = '';
+  Author = '';
+  localStorage.setItem('Books', JSON.stringify(bookList));
+  addBook();
+}
 
-    newLine.innerHTML = bookTitle.value;
-    nextLine.innerHTML = author.value;
+let btnAdd= document.getElementById("btn");
 
-    contain.appendChild(icontainer);
-    icontainer.appendChild(newLine);
-    icontainer.appendChild(nextLine);
-    icontainer.appendChild(button);
-    icontainer.appendChild(line);
-
-   
-
-    /*bookTitle.value = "";
-    author.value = "";*/
-
-    const ic= document.getElementsByClassName("book");
-
-    removebtn = document.getElementsByClassName("remove");
-    for (let i = 0; i <= removebtn.length; i++) {
-      removebtn[i].addEventListener("click", function () {
-			  
-        ic[i].remove();
-
-        });
-    }
-  });
-};
+btnAdd.addEventListener('click', storeBook);
+function removeItem(index) {
+  bookList.splice(index, 1);
+  localStorage.setItem('Books', JSON.stringify(bookList));
+  addBook();
+}
