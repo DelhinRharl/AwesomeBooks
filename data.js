@@ -33,7 +33,7 @@ const storeBook = () => {
     title: Title,
     author: Author,
   };
-  if (data.title !='' && data.author !='') {
+  if (data.title !== '' && data.author !== '') {
     bookList.push(data);
   }
   Title = '';
