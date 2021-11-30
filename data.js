@@ -1,5 +1,5 @@
-
-let Title, Author; 
+let Title;
+let Author;
 let bookList = [];
 
 function getValues() {
@@ -18,29 +18,28 @@ function addBook() {
       <p class="authir">${book.author}</p>
       <button class="remove" onClick = 'removeItem(${index})'>Remove</button>
       <hr> 
-    </div>`
-  })
+    </div>`;
+  });
 }
-if(localStorage.getItem('Books')) {
+if (localStorage.getItem('Books')) {
   bookList = JSON.parse(localStorage.getItem('Books'));
   addBook();
 }
 
-function storeBook () {
+function storeBook() {
   getValues();
-  let data = {
-    title:  Title,
-    author: Author
-  }
+  const data = {
+    title: Title,
+    author: Author,
+  };
   bookList.push(data);
   Title = '';
   Author = '';
   localStorage.setItem('Books', JSON.stringify(bookList));
   addBook();
 }
-
-let btnAdd= document.getElementById("btn");
-
+/* eslint-disable no-unused-vars */
+const btnAdd = document.getElementById('btn');
 btnAdd.addEventListener('click', storeBook);
 function removeItem(index) {
   bookList.splice(index, 1);
