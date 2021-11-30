@@ -52,6 +52,6 @@ const removeItem = (index) => {
   addBook();
 };
 
-if (1===0) {
+if (1 === 0) {
   removeItem();
 }
