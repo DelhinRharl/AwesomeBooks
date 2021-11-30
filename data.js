@@ -1,5 +1,6 @@
-
-let Title, Author; 
+/* eslint-disable */
+let Title;
+let Author;
 let bookList = [];
 
 getValues = () => {
@@ -7,9 +8,9 @@ getValues = () => {
   Author = document.querySelector('#author').value;
   document.querySelector('#title').value = '';
   document.querySelector('#author').value = '';
-}
+};
 
-  addBook = () => {
+addBook = () => {
   document.getElementById('dynamic').innerHTML = '';
   bookList.forEach((book, index) => {
     document.getElementById('dynamic').innerHTML += `
@@ -18,10 +19,11 @@ getValues = () => {
       <p class="authir">${book.author}</p>
       <button class="remove" onClick = 'removeItem(${index})'>Remove</button>
       <hr> 
-    </div>`
-  })
-}
-if(localStorage.getItem('Books')) {
+    </div>`;
+  });
+};
+
+if (localStorage.getItem('Books')) {
   bookList = JSON.parse(localStorage.getItem('Books'));
   addBook();
 }
@@ -47,4 +49,4 @@ removeItem = (index) => {
   bookList.splice(index, 1);
   localStorage.setItem('Books', JSON.stringify(bookList));
   addBook();
-}
+};
