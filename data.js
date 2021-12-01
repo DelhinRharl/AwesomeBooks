@@ -7,25 +7,23 @@ class Book {
 }
 
 class BookL {
-  bookList =  [];
-  add() {
-    let Title;
-    let Author;
-    Title = document.querySelector('#title').value;
-    Author = document.querySelector('#author').value;
+  bookList = [];
 
+  add() {
+    const Title = document.querySelector('#title').value;
+    const Author = document.querySelector('#author').value;
     if (Title !== '' && Author !== '') {
-      let book = new Book(Title,Author);
+      const book = new Book(Title, Author);
       this.bookList.push(book);
       localStorage.setItem('Books', JSON.stringify(this.bookList));
       this.bookList = JSON.parse(localStorage.getItem('Books'));
       this.render();
     }
-    document.querySelector('#title').value='';
-    document.querySelector('#author').value='';
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
   }
-  render() {
 
+  render() {
     if (JSON.parse(localStorage.getItem('Books')) != null) {
       this.bookList = JSON.parse(localStorage.getItem('Books'));
       document.getElementById('dynamic').innerHTML = '';
@@ -38,10 +36,11 @@ class BookL {
           <hr>
         </div>`;
       });
-    }else {
+    } else {
       document.getElementById('dynamic').innerHTML = '';
     }
   }
+
   remove(index) {
     this.bookList.splice(index, 1);
     localStorage.setItem('Books', JSON.stringify(this.bookList));
@@ -49,9 +48,8 @@ class BookL {
   }
 }
 
-
-let bookl = new BookL();
+const bookl = new BookL();
 bookl.render();
-document.getElementById('btn').addEventListener('click', function(){
-bookl.add();
+document.getElementById('btn').addEventListener('click', () => {
+  bookl.add();
 });
