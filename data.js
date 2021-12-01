@@ -7,7 +7,7 @@ class Book {
 }
 
 class BookL {
-  bookList = [];
+  bookList =  [];
   add() {
     let Title;
     let Author;
@@ -18,14 +18,16 @@ class BookL {
       let book = new Book(Title,Author);
       this.bookList.push(book);
       localStorage.setItem('Books', JSON.stringify(this.bookList));
+      this.bookList = JSON.parse(localStorage.getItem('Books'));
       this.render();
     }
     document.querySelector('#title').value='';
     document.querySelector('#author').value='';
   }
   render() {
-    this.bookList = JSON.parse(localStorage.getItem('Books'));
-    if (this.bookList.length != 0) {
+
+    if (JSON.parse(localStorage.getItem('Books')) != null) {
+      this.bookList = JSON.parse(localStorage.getItem('Books'));
       document.getElementById('dynamic').innerHTML = '';
       this.bookList.forEach((book, index) => {
         document.getElementById('dynamic').innerHTML += `
