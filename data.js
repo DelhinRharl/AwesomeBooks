@@ -4,7 +4,7 @@ class Book {
     this.Author = Author;
   }
 }
-
+ 
 class BookL {
   bookList = [];
   add() {
@@ -12,14 +12,19 @@ class BookL {
     let Author;
     Title = document.querySelector('#title').value;
     Author = document.querySelector('#author').value;
+ 
     if (Title !=='' && Author !=='') {
       let book = new Book(Title,Author);
       this.bookList.push(book);
+      localStorage.setItem('Books', JSON.stringify(this.bookList));
       this.render();
     }
+    document.querySelector('#title').value='';
+    document.querySelector('#author').value='';
   }
   render() {
     document.getElementById('dynamic').innerHTML = '';
+    this.bookList = JSON.parse(localStorage.getItem('Books'));
     this.bookList.forEach((book, index) => {
       document.getElementById('dynamic').innerHTML += `
       <div class="books">
@@ -32,17 +37,14 @@ class BookL {
   }
   remove(index) {
     this.bookList.splice(index, 1);
+    localStorage.setItem('Books', JSON.stringify(this.bookList));
     this.render();
   }
 }
-
-
+ 
+ 
 let bookl = new BookL();
+bookl.render();
 document.getElementById('btn').addEventListener('click', function(){
 bookl.add();
-})
-//btnAdd.addEventListener('click', storeBook);
-
-if (1 === 0) {
-  removeItem();
-}
+});
