@@ -14,7 +14,7 @@ class BookL {
     Title = document.querySelector('#title').value;
     Author = document.querySelector('#author').value;
 
-    if (Title !=='' && Author !=='') {
+    if (Title !== '' && Author !== '') {
       let book = new Book(Title,Author);
       this.bookList.push(book);
       localStorage.setItem('Books', JSON.stringify(this.bookList));
@@ -25,7 +25,7 @@ class BookL {
   }
   render() {
     this.bookList = JSON.parse(localStorage.getItem('Books'));
-    if (this.bookList != 0) {
+    if (this.bookList.length != 0) {
       document.getElementById('dynamic').innerHTML = '';
       this.bookList.forEach((book, index) => {
         document.getElementById('dynamic').innerHTML += `
@@ -36,6 +36,8 @@ class BookL {
           <hr>
         </div>`;
       });
+    }else {
+      document.getElementById('dynamic').innerHTML = '';
     }
   }
   remove(index) {
