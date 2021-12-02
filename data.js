@@ -47,6 +47,9 @@ class BookL {
   }
 }
 
+const d = new Date();
+document.getElementById("date").innerHTML = d;
+
 const bookl = new BookL();
 bookl.render();
 document.getElementById('btn').addEventListener('click', () => {
