@@ -30,9 +30,8 @@ class BookL {
       this.bookList.forEach((book, index) => {
         document.getElementById('dynamic').innerHTML += `
         <div class="books">
-          <p class="title">${book.Title}</p>
-          <p class="authir">${book.Author}</p>
-          <button class="remove" onClick = 'bookl.remove(${index})'>Remove</button>
+          <p class="title"> <b> "${book.Title}"    &nbsp; By  ${book.Author}</b></p>
+          <button class="remove btns" onClick = 'bookl.remove(${index})'><b> Remove</b> </button>
           <hr>
         </div>`;
       });

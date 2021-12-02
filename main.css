@@ -4,20 +4,6 @@ body {
   display: flex;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(45deg, #747475 0%, #6c6c6e 100%),
-    radial-gradient(100% 225% at 100% 0%, #3d3a39 0%, #535151 100%),
-    linear-gradient(225deg, #a59b92 0%, #6d6a6a 100%),
-    linear-gradient(
-      135deg,
-      #818684 10%,
-      #868b89 35%,
-      #8b9191 35%,
-      #3b3b3b 60%,
-      #7f8183 60%,
-      #6c6f70 67%,
-      #5b5a5e 67%,
-      #79797e 100%
-    );
   background-blend-mode: screen, overlay, hard-light, normal;
   background-size: cover;
   background-repeat: repeat;
@@ -27,7 +13,6 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
 }
 .dynamic {
@@ -36,47 +21,63 @@ body {
   overflow: auto;
   scrollbar-width: 2px;
   width: 80%;
-  height: 20vh;
   background-color: rgba(214, 213, 212, 0.753);
   border-radius: 0.3125rem;
 }
+
 .books {
+  font-weight: 500;
+}
+
+.books:nth-child(odd)  {
   display: flex;
   justify-content: space-between;
   background-color: #9c9b9a83;
   border: #afaead;
   margin-bottom: 0.125rem;
-  width: 100%;
   align-items: center;
   padding: 1%;
 }
-.remove {
+
+.books:nth-child(even)  {
+  display: flex;
+  justify-content: space-between;
+  background-color:white;
+  border: #afaead;
+  margin-bottom: 0.125rem;
+  align-items: center;
+  padding: 1%;
+}
+
+
+.btns {
   float: right;
   right: 15%;
   height: 2.5rem;
   width: 6.125rem;
   border-radius: 0.3125rem;
-  border: solid 1px #adadad63;
+  border: 2px solid black;
 }
 hr {
   display: none;
 }
-.title {
+
+.main-title{
   width: 18.25rem;
   height: 2.25rem;
+  border: 2px solid black;
   border-radius: 5px;
-  border: transparent;
 }
 .author {
   width: 18.25rem;
   height: 2.25rem;
   border-radius: 5px;
-  border: transparent;
 }
-#btn {
-  height: 2.5rem;
-  width: 6.125rem;
-  border-radius: 0.3125rem;
-  border: solid 1px #adadad63;
-  float: right;
+
+.line {
+  margin-top: 5px;
+  height: 3px;
+  width: 25%;
+  text-align: center;
+  background-color: black;
 }
