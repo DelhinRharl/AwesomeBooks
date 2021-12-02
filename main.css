@@ -8,6 +8,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
 }
+
 .container {
   align-items: center;
   display: flex;
@@ -15,6 +16,7 @@ body {
   flex-direction: column;
   width: 100%;
 }
+
 .dynamic {
   margin: 0.625rem;
   padding: 1%;
@@ -29,7 +31,7 @@ body {
   font-weight: 500;
 }
 
-.books:nth-child(odd)  {
+.books:nth-child(odd) {
   display: flex;
   justify-content: space-between;
   background-color: #9c9b9a83;
@@ -39,16 +41,15 @@ body {
   padding: 1%;
 }
 
-.books:nth-child(even)  {
+.books:nth-child(even) {
   display: flex;
   justify-content: space-between;
-  background-color:white;
+  background-color: white;
   border: #afaead;
   margin-bottom: 0.125rem;
   align-items: center;
   padding: 1%;
 }
-
 
 .btns {
   float: right;
