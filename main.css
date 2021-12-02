@@ -85,29 +85,29 @@ hr {
 }
 
 ul {
-width: 98%;
-list-style-type: none;
-margin: 5px 5px;
-padding: 0;
-overflow: hidden;
-border: 2px solid black;
+  width: 98%;
+  list-style-type: none;
+  margin: 5px 5px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid black;
 }
 
 li {
-float: right;
-border-right:1px solid #bbb;
+  float: right;
+  border-right: 1px solid #bbb;
 }
 
 li:last-child {
-border-right: none;
+  border-right: none;
 }
 
 li a {
-display: block;
-color: black;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 #awesome-logo {
@@ -121,3 +121,14 @@ text-decoration: none;
 #date {
   float: right;
   margin-right: 20px;
+}
+
+.copyright {
+  width: 98%;
+  margin: 5px 5px;
+  padding-left: 15px;
+  overflow: hidden;
+  border: 2px solid black;
+  bottom: 5px;
+  position: absolute;
+}

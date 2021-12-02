@@ -48,7 +48,7 @@ class BookL {
 }
 
 const d = new Date();
-document.getElementById("date").innerHTML = d;
+document.getElementById('date').innerHTML = d;
 
 const bookl = new BookL();
 bookl.render();
