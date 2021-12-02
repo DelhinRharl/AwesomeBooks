@@ -47,6 +47,45 @@ class BookL {
   }
 }
 
+const d = new Date();
+document.getElementById('date').innerHTML = d;
+
+document.getElementById('dynamic').style.display = 'block';
+document.getElementById('all-books').style.display = 'block';
+document.getElementById('add-book').style.display = 'none';
+document.getElementById('contact').style.display = 'none';
+document.getElementById('list').style.color = 'blue';
+
+document.getElementById('add-new').addEventListener('click', () => {
+  document.getElementById('add-book').style.display = 'block';
+  document.getElementById('dynamic').style.display = 'none';
+  document.getElementById('all-books').style.display = 'none';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('add-new').style.color = 'blue';
+  document.getElementById('list').style.color = 'black';
+  document.getElementById('contact-click').style.color = 'black';
+});
+
+document.getElementById('list').addEventListener('click', () => {
+  document.getElementById('add-book').style.display = 'none';
+  document.getElementById('dynamic').style.display = 'block';
+  document.getElementById('all-books').style.display = 'block';
+  document.getElementById('contact').style.display = 'none';
+  document.getElementById('add-new').style.color = 'black';
+  document.getElementById('list').style.color = 'blue';
+  document.getElementById('contact-click').style.color = 'black';
+});
+
+document.getElementById('contact-click').addEventListener('click', () => {
+  document.getElementById('add-book').style.display = 'none';
+  document.getElementById('dynamic').style.display = 'none';
+  document.getElementById('all-books').style.display = 'none';
+  document.getElementById('contact').style.display = 'block';
+  document.getElementById('add-new').style.color = 'black';
+  document.getElementById('list').style.color = 'black';
+  document.getElementById('contact-click').style.color = 'blue';
+});
+
 const bookl = new BookL();
 bookl.render();
 document.getElementById('btn').addEventListener('click', () => {
