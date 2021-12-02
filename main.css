@@ -1,4 +1,82 @@
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #747475 0%, #6c6c6e 100%),
+    radial-gradient(100% 225% at 100% 0%, #3d3a39 0%, #535151 100%),
+    linear-gradient(225deg, #a59b92 0%, #6d6a6a 100%),
+    linear-gradient(
+      135deg,
+      #818684 10%,
+      #868b89 35%,
+      #8b9191 35%,
+      #3b3b3b 60%,
+      #7f8183 60%,
+      #6c6f70 67%,
+      #5b5a5e 67%,
+      #79797e 100%
+    );
+  background-blend-mode: screen, overlay, hard-light, normal;
+  background-size: cover;
+  background-repeat: repeat;
+}
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+.dynamic {
+  margin: 0.625rem;
+  padding: 1%;
+  overflow: auto;
+  scrollbar-width: 2px;
+  width: 80%;
+  height: 20vh;
+  background-color: rgba(214, 213, 212, 0.753);
+  border-radius: 0.3125rem;
+}
+.books {
+  display: flex;
+  justify-content: space-between;
+  background-color: #9c9b9a83;
+  border: #afaead;
+  margin-bottom: 0.125rem;
+  width: 100%;
+  align-items: center;
+  padding: 1%;
+}
+.remove {
+  float: right;
+  right: 15%;
+  height: 2.5rem;
+  width: 6.125rem;
+  border-radius: 0.3125rem;
+  border: solid 1px #adadad63;
+}
+hr {
+  display: none;
+}
+.title {
+  width: 18.25rem;
+  height: 2.25rem;
+  border-radius: 5px;
+  border: transparent;
+}
+.author {
+  width: 18.25rem;
+  height: 2.25rem;
+  border-radius: 5px;
+  border: transparent;
+}
+#btn {
+  height: 2.5rem;
+  width: 6.125rem;
+  border-radius: 0.3125rem;
+  border: solid 1px #adadad63;
+  float: right;
 }
