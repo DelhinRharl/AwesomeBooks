@@ -21,7 +21,6 @@ body {
   margin: 0.625rem;
   padding: 1%;
   overflow: auto;
-  scrollbar-width: 2px;
   width: 80%;
   background-color: rgba(214, 213, 212, 0.753);
   border-radius: 0.3125rem;
@@ -59,6 +58,7 @@ body {
   border-radius: 0.3125rem;
   border: 2px solid black;
 }
+
 hr {
   display: none;
 }
@@ -69,6 +69,7 @@ hr {
   border: 2px solid black;
   border-radius: 5px;
 }
+
 .author {
   width: 18.25rem;
   height: 2.25rem;
