@@ -84,7 +84,7 @@ hr {
   background-color: black;
 }
 
-ul {
+.nav-list {
   width: 98%;
   list-style-type: none;
   margin: 5px 5px;
@@ -93,16 +93,16 @@ ul {
   border: 2px solid black;
 }
 
-li {
+.nav-list li {
   float: right;
   border-right: 1px solid #bbb;
 }
 
-li:last-child {
+.nav-list li:last-child {
   border-right: none;
 }
 
-li a {
+.nav-list li a {
   display: block;
   color: black;
   text-align: center;
@@ -131,4 +131,14 @@ li a {
   border: 2px solid black;
   bottom: 5px;
   position: absolute;
+}
+
+.contact-title {
+  text-align: center;
+  padding: 50px;
+  font-size: 40px;
+}
+
+.last-contact {
+  padding-bottom: 50px;
 }

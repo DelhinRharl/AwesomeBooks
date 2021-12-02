@@ -50,8 +50,8 @@ class BookL {
 const d = new Date();
 document.getElementById('date').innerHTML = d;
 
-document.getElementById("dynamic").style.display = "block";
-document.getElementById("all-books").style.display = "block";
+document.getElementById("dynamic").style.display = "none";
+document.getElementById("all-books").style.display = "none";
 document.getElementById("add-book").style.display = "none";
 
 document.getElementById('add-new').addEventListener('click', () => {
