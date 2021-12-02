@@ -11,36 +11,38 @@
     <div class="container" id="container">
       <ul>
         <li><a class="" href="#home">Contact</a></li>
-        <li><a href="#news">Add New</a></li>
-        <li><a href="#contact">List</a></li>
+        <li><a href="#news" id="add-new">Add New</a></li>
+        <li><a href="#contact" id="list">List</a></li>
         <li id="awesome-logo"><a href="#about">Awesome Book</a></li>
       </ul>
       <div id="div-date">
         <p id="date"></p>
       </div>
 
-      <h1>Awesome Books</h1>
+      <h1 id="all-books">All Awesome Books</h1>
       <div class="dynamic" id="dynamic"></div>
-      <div class="line"></div>
-      <h2>Add a new book</h2>
-      <form action="#" id="form-content">
-        <div class="form">
-          <label for="title"></label>
-          <input
-            type="text"
-            id="title"
-            class="title main-title"
-            placeholder="Title"
-          />
-        </div>
-        <br />
-        <div class="form1">
-          <label for="author"></label>
-          <input type="text" id="author" class="author" placeholder="Author" />
-        </div>
-        <br />
-        <button type="button" id="btn" class="btns">Add</button>
-      </form>
+      <div id="add-book" >
+        <h2>Add a new book</h2>
+        <form action="#" id="form-content" >
+          <div class="form">
+            <label for="title"></label>
+            <input
+              type="text"
+              id="title"
+              class="title main-title"
+              placeholder="Title"
+            />
+          </div>
+          <br />
+          <div class="form1">
+            <label for="author"></label>
+            <input type="text" id="author" class="author" placeholder="Author" />
+          </div>
+          <br />
+          <button type="button" id="btn" class="btns">Add</button>
+        </form>
+      </div>
+
       <footer class="copyright">
         <p>Copyright</p>
       </footer>

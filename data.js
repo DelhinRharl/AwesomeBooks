@@ -50,6 +50,22 @@ class BookL {
 const d = new Date();
 document.getElementById('date').innerHTML = d;
 
+document.getElementById("dynamic").style.display = "block";
+document.getElementById("all-books").style.display = "block";
+document.getElementById("add-book").style.display = "none";
+
+document.getElementById('add-new').addEventListener('click', () => {
+  document.getElementById("add-book").style.display = "block";
+  document.getElementById("dynamic").style.display = "none";
+  document.getElementById("all-books").style.display = "none";
+});
+
+document.getElementById('list').addEventListener('click', () => {
+  document.getElementById("add-book").style.display = "none";
+  document.getElementById("dynamic").style.display = "block";
+  document.getElementById("all-books").style.display = "block";
+});
+
 const bookl = new BookL();
 bookl.render();
 document.getElementById('btn').addEventListener('click', () => {
