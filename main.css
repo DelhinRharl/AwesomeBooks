@@ -1,4 +1,85 @@
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-blend-mode: screen, overlay, hard-light, normal;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dynamic {
+  margin: 0.625rem;
+  padding: 1%;
+  overflow: auto;
+  width: 80%;
+  background-color: rgba(214, 213, 212, 0.753);
+  border-radius: 0.3125rem;
+}
+
+.books {
+  font-weight: 500;
+}
+
+.books:nth-child(odd) {
+  display: flex;
+  justify-content: space-between;
+  background-color: #9c9b9a83;
+  border: #afaead;
+  margin-bottom: 0.125rem;
+  align-items: center;
+  padding: 1%;
+}
+
+.books:nth-child(even) {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: #afaead;
+  margin-bottom: 0.125rem;
+  align-items: center;
+  padding: 1%;
+}
+
+.btns {
+  float: right;
+  right: 15%;
+  height: 2.5rem;
+  width: 6.125rem;
+  border-radius: 0.3125rem;
+  border: 2px solid black;
+}
+
+hr {
+  display: none;
+}
+
+.main-title {
+  width: 18.25rem;
+  height: 2.25rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.author {
+  width: 18.25rem;
+  height: 2.25rem;
+  border-radius: 5px;
+}
+
+.line {
+  margin-top: 5px;
+  height: 3px;
+  width: 25%;
+  text-align: center;
+  background-color: black;
 }
